@@ -35,7 +35,7 @@ public class MorseTreeMain
         myTree.add("Y","-.--");
         myTree.add("Z","--..");
     	
-    	System.out.print("Put _ after each letter or put __ for space and put # to end \nExample (...._._.-.._._-.__--._..-#)"
+    	System.out.print("Put _ after each letter or put __ for space and put # to end \nExample (...__---__...#)"
     			+ "\nEnter the Morse Code: ");
         String nodes = keyboard.nextLine();
         System.out.print(myTree.decode(nodes));
