@@ -1,4 +1,6 @@
 # Morsecode-Translation
 Code for translating morse code to text.
 Just enter the morse code using "." and "-".
-Also using _ for space in between words and # at the end of the morse code input.
+Use _ after each letter.
+Use __ for spacing in between words.
+Finally use # to end a sentence.
