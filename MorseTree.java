@@ -88,7 +88,7 @@ public class MorseTree extends MorseTreeNode {
             	}
             	if(j < 2) {
                     
-            		name += (String) cursor.element();
+                    name += (String) cursor.element();
                     cursor = getRoot();
             	}
             	
