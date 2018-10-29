@@ -1,67 +1,66 @@
-public class MorseTreeNode 
-    {
+public class MorseTreeNode {
+    
         protected MorseTreeNode parent;
         protected MorseTreeNode leftChild;
         protected MorseTreeNode rightChild;
         protected Object element;
         
-        public MorseTreeNode () 
-        {
+        public MorseTreeNode () {
             
         }
         
-        public MorseTreeNode(Object o) 
-        {
+        public MorseTreeNode(Object o) {
+            
             setElement(o);
         }
         
-        public void setParent (MorseTreeNode n) 
-        {
+        public void setParent (MorseTreeNode n) {
+            
             parent = n;
         }
         
-        public MorseTreeNode getParent() 
-        {
+        public MorseTreeNode getParent() {
+            
             return parent;
         }
         
-        public void setLeftChild (MorseTreeNode child) 
-        {
+        public void setLeftChild (MorseTreeNode child) {
+            
             leftChild = child;
         }
         
-        public void setRightChild (MorseTreeNode child) 
-        {
+        public void setRightChild (MorseTreeNode child) {
+           
             rightChild = child;
         } 
         
-        public boolean hasLeftChild () 
-        {
+        public boolean hasLeftChild () {
+            
             return (leftChild != null);
         } 
     
-        public boolean hasRightChild () 
-        {
+        public boolean hasRightChild () {
+           
             return (rightChild != null);
         } 
         
-        public void setElement (Object o) 
-        {
+        public void setElement (Object o) {
+            
             element = o;
         } 
         
-        public MorseTreeNode getLeftChild() 
-        {
+        public MorseTreeNode getLeftChild() {
+            
             return (MorseTreeNode) leftChild;
         } 
         
-        public MorseTreeNode getRightChild() 
-        {
+        public MorseTreeNode getRightChild() {
+            
             return (MorseTreeNode) rightChild;
         } 
         
-        public Object element() 
-        {
+        public Object element() {
+            
             return element;
         } 
         
