@@ -1,17 +1,18 @@
 import java.util.Scanner;
 
-public class MorseTree extends MorseTreeNode
-{
+public class MorseTree extends MorseTreeNode {
+    
     MorseTreeNode root;
     int size;
 
-    public MorseTree() 
-    { 
+    public MorseTree() { 
+       
         root = new MorseTreeNode();
     }
+    
     //method to add all the letter
-    public void add (Object letter, Object morse) 
-    {
+    public void add (Object letter, Object morse) {
+        
         String element = (String) letter;
         String path = (String) morse;
         String currentNode = "";
@@ -19,13 +20,13 @@ public class MorseTree extends MorseTreeNode
         MorseTreeNode cursor = getRoot();
         MorseTreeNode temp = new MorseTreeNode();
         
-        for (int i=0; i<path.length(); i++) 
-        {
+        for (int i=0; i<path.length(); i++) {
+            
             currentNode = path.substring(i,i+1);
-            if (currentNode.equals(".")) 
-            {
-                if (cursor.hasLeftChild()) 
-                {
+            if (currentNode.equals(".")) {
+                
+                if (cursor.hasLeftChild()) {
+                    
                     cursor = cursor.getLeftChild();
                 } else {
                     cursor.setLeftChild(new MorseTreeNode());
@@ -35,8 +36,7 @@ public class MorseTree extends MorseTreeNode
                     cursor.setParent(temp);
                 }
             } else {
-                if (cursor.hasRightChild()) 
-                {
+                if (cursor.hasRightChild()) {
                     cursor = cursor.getRightChild();
                 } else {
                     cursor.setRightChild(new MorseTreeNode());
@@ -50,61 +50,61 @@ public class MorseTree extends MorseTreeNode
         cursor.setElement(element);
     }
 
-    public String decode (String path) throws RuntimeException 
-    {
-    	String name = "";
+    public String decode (String path) throws RuntimeException {
+    	
+        String name = "";
         String currentNode = "";
         int j = 0;
         MorseTreeNode cursor = getRoot();
         
-        for (int i = 0; i < path.length(); i++) 
-        {
+        for (int i = 0; i < path.length(); i++) {
+           
             currentNode = path.substring(i,i+1);
-            if (currentNode.equals(".")) 
-            {
-                if (cursor.hasLeftChild()) 
-                {
+            if (currentNode.equals(".")) {
+                
+                if (cursor.hasLeftChild()) {
+                    
                     cursor = cursor.getLeftChild();
                     j = 0;
                 } else {
                     throw new RuntimeException("Code pattern not found.");
                 }
-            } else if (currentNode.equals("-")) 
-            {
-                if (cursor.hasRightChild()) 
-                {
+            } else if (currentNode.equals("-")) {
+                
+                if (cursor.hasRightChild()) {
+                    
                     cursor = cursor.getRightChild();
                     j = 0;
                 } else {
                     throw new RuntimeException("Code pattern not found. ");
                 }
-            }else if (currentNode.equals("_")) 
-            {
+            }else if (currentNode.equals("_")) {
+                
             	j++;
-            	if(j >= 2)
-            	{
+            	if(j >= 2) {
+                    
             		String space = " ";
             		name += space;
             	}
-            	if(j < 2)
-            	{
+            	if(j < 2) {
+                    
             		name += (String) cursor.element();
                     cursor = getRoot();
             	}
             	
-            }else if (currentNode.equals("#")) 
-            {
-            	return name += (String) cursor.element();
+            }else if (currentNode.equals("#")) {
+            	
+                return name += (String) cursor.element();
             }
         } 
         return name += (String) cursor.element();
     } 
-    public MorseTreeNode getRoot() 
-    {
+    public MorseTreeNode getRoot() {
+        
         return root;
     } 
-    public int size() 
-    {
+    public int size() {
+        
         return size;
     } 
 }
